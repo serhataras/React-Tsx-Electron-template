@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import { RouteComponentProps } from 'react-router';
 import fs from "fs";
+import ScreenRecorder from "../components/ScreenRecorder/ScreenRecorder";
 
 interface State {
     text: string;
@@ -59,14 +60,9 @@ export default class FooView extends PureComponent<RouteComponentProps, State> {
     public render() {
         return (
             <div>
-                <h3>FOO View</h3>
-                <p>
-                    {this.state.text}
-                </p>
+                <ScreenRecorder>
 
-                <button onClick={this.onOpenFileClick}>Open file...</button>
-                <input type="file" ref={this.fileRef} onChange={this.onFileInputChange} style={{ display: "none" }} />
-                <button onClick={this.onGotoBarClick}>Go to Bar</button>
+                </ScreenRecorder>
             </div>
         );
     }
